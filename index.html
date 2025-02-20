@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="eS">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+  <!-- cdn font-awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- estilos principales -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- título -->
+  <title>Latam-MotorSport LM</title>
+  <!-- icono favicon -->
+  <!--<link rel="icon" type="image/x-icon" href="icon/code-solid.svg">-->
+  <link rel="icon" href="./icon/casco.ico">
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Latam-MotorSport" />
+  <meta property="og:type" content="Latam-MotorSport" />
+  <meta property="og:url" content="https://cyberenterados.github.io/latam-motorsport/" />
+  <meta property="og:image" content="https://pbs.twimg.com/media/Gbjzp_HWsAAjVKE?format=png&name=small" />
+  <meta property="og:description" content="Latam-MotorSport"/>
+  
+  <!-- Estilos adicionales para la sección reemplazada responsiva -->
+  <style>
+  /* Contenedor para la nueva sección de videos */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: 80vh;
+    border: 1px solid #000;
+    overflow: hidden;
+    background: url('Imagenes/background2.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    /* Efecto visual mejorado */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Contenedores de video */
+  .thumbnail {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin: 12px 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Mismo efecto 3D */
+  }
+
+  .thumbnail video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumbnail .text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Contenedores horizontales (carreras de YouTube) */
+  .video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra 3D */
+    background: rgba(255, 255, 255, 0.1); /* Suave transparencia */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .video-card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  }
+
+  /* Ajustes para dispositivos móviles */
+  @media (max-width: 600px) {
+    .container {
+      padding: 5px;
+      min-height: auto;
+    }
+
+    .thumbnail {
+      height: 100px;
+      margin: 10px 0;
+    }
+
+    .thumbnail .text {
+      font-size: 18px;
+    }
+
+    .video-card {
+      padding: 5px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <!-- SECCIÓN INICIO -->
+  <div id="inicio-v">
+    <div class="video-fondo">
+      <video class="video-grande" autoplay muted loop>
+        <source src="https://github.com/cyberenterados/latam-motorsport/raw/refs/heads/main/vid/banner-1.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+      <img src="#" alt="LMLOGO" class="smart-img"> 
+    </div>
+    <section id="inicio">
+      <div class="contenido">
+        <header>
+          <div class="contenido-header">
+            <!--<h1>LM</h1>-->
+            <img src="./img/logo-sin-fondo.png" alt="LM LOGO" class="lm-logo">
+            <nav id="nav" class="">
+              <ul id="links">
+                <li><a href="#inicio" class="seleccionando" onclick="seleccionar(this)">Inicio</a></li>
+                <!--<li><a href="#sobremi">Biografía</a></li>-->
+                <li><a href="#servicios">Próximas carreras</a></li>
+                <li><a href="#portafolio">Carreras YouTube</a></li>
+              </ul>
+            </nav>
+            <!-- Iconos del menú responsive -->
+            <div id="icon-nav" onclick="responsiveMenu()" class="blanco">
+              <a><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <div class="redes">
+              <a href="https://www.youtube.com/@latammotorsport/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://discord.gg/ChJMa2Ex" target="_blank"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://www.instagram.com/latam.motorsport/profilecard/?igsh=NzQ0Z3R6bzJsdXBr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.twitch.tv/latamfm" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+              <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>    
+            </div>
+          </div>                
+        </header>
+        <div class="presentacion"></div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- SECCIÓN SERVICIOS (Reemplazada, responsiva y con fallback usando poster) -->
+  <section id="servicios">
+    <h3 class="titulo-seccion">Próximas Carreras</h3>        
+    <div class="container">
+      <!-- Video 1 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/daytona.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">PRÓXIMAMENTE</div>
+      </div>
+  
+      <!-- Video 2 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/video2.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 2</div>
+      </div>
+  
+      <!-- Video 3 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/nascar.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 3</div>
+      </div>
+  
+      <!-- Video 4 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/video4.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 4</div>
+      </div>
+  
+      <!-- Video 5 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/video5.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 5</div>
+      </div>
+  
+      <!-- Video 6 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/video6.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 6</div>
+      </div>
+  
+      <!-- Video 7 -->
+      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="Videos/video7.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="text">Texto 7</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN PORTAFOLIO -->
+  <section id="portafolio">        
+    <h2 class="videos">Carreras Youtube</h2>
+    <div class="scroll-buttons">
+      <!--<button onclick="scrollLeft()">&#10094; Anterior</button>-->
+      <!--<button onclick="scrollRight()">Siguiente &#10095;</button>-->
+    </div>
+    <div class="video-section" id="videoSection">
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HoA1pmNtIhA?si=xyz2lQ_6zWxKKJnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3u21L41V4aU?si=K82cDSwf5u9OA582" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TL9BIXLyaUU?si=JEIRQnHxj0q1Lvrj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/x6zM8C_fnec?si=dNR-WuYFjuQQwZIy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/t4IhQgeuWqw?si=kOsnkkVoN2ppM5Dx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xc8FjFkj2ro?si=0ne2o2JATIqN_u7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HkvzlPqWSxg?si=XUAQ-78vsWVKhNnv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MFbC9idiiJU?si=uTIMOswgQXa5asdG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MFbC9idiiJU?si=uTIMOswgQXa5asdG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h3></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UMxkx3l8uCE?si=8ju4NmuS4TMHEmcB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </section>
+  
+  <!-- SECCIÓN FOOTER -->
+  <footer class="footer">
+    <p>Todos los derechos reservados - 2024</p>
+    <p>LM Latam</p>
+    <a href="https://www.youtube.com/@latammotorsport/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://discord.gg/ChJMa2Ex" target="_blank"><i class="fa-brands fa-discord"></i></a>
+    <a href="https://www.instagram.com/latam.motorsport/profilecard/?igsh=NzQ0Z3R6bzJsdXBr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.twitch.tv/latamfm" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+    <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>    
+  </footer>
+  <!-- js -->
+  <script src="js/main.js"></script>
+</body>
+</html>
