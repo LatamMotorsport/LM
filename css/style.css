@@ -1,0 +1,599 @@
+/** Agregamos la fuente que vamos a utilizar en la pagina  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat'; 
+       
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/** #inicio {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('https://new.express.adobe.com/id/urn:aaid:sc:US:23094ad3-64b5-5666-a3d8-c59cda6fb093?invite=true&promoid=Z2G1FQKR&mv=other');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+} */
+
+#inicio-v{
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+.video-fondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+}
+
+.video-pequena {
+    display: none; /* Oculta el video pequeño por defecto */
+}
+
+@media screen and (max-width: 600px) {
+    .video-grande {
+        display: none; /* Oculta el video grande en pantallas pequeñas */
+    }
+
+    .video-pequena {
+        display: block; /* Muestra el video pequeño en pantallas pequeñas */
+        width: 90%; /* Asegúrate de que se ajuste al contenedor */
+        height: auto; /* Mantiene la proporción del video */
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .video-grande {
+        display: block; /* Muestra el video grande en pantallas grandes */
+        width: 100%; /* Asegúrate de que se ajuste al contenedor */
+        height: auto; /* Mantiene la proporción del video */
+    }
+
+    .video-pequena {
+        display: none; /* Oculta el video pequeño en pantallas grandes */
+    }
+}
+
+/* Resto del CSS */
+
+
+#inicio .contenido header{
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+
+#inicio .contenido header .contenido-header{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #b36d06;
+
+}
+
+#inicio .contenido header .contenido-header h1{
+    text-align: center;
+    color: #b36d06;
+}
+
+#inicio .contenido header .contenido-header nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+#inicio .contenido header .contenido-header nav ul li a{
+    text-decoration: none;
+    color: #b36d06;
+    margin: 0 12px;
+    font-weight: 400;
+    transition: .5s;
+}
+
+#inicio .contenido header .contenido-header nav ul a:hover{
+    color: #b36d06;
+}
+
+#inicio .contenido header .contenido-header .redes a{
+    text-decoration: none;
+    color: #b36d06;
+    display: inline-block;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+#inicio .contenido header .contenido-header .redes a:hover{
+    color: #b36d06;
+}
+
+#inicio .contenido .presentacion{
+    max-width: 1100px;
+    height: 100vh;
+    margin: auto;
+    color: #b36d06;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inicio .contenido .presentacion .bienvenida{
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+#inicio .contenido .presentacion h2{
+    font-size: 55px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#inicio .contenido .presentacion h2 span{
+    font-size: 55px;
+    color: #b36d06;    
+}
+
+#inicio .contenido .presentacion .descripcion{
+    max-width: 800px;
+    margin: 25px auto;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+#inicio .contenido .presentacion a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 10px 25px;
+    border: 2px solid #b36d06;
+    border-radius: 50px;
+    color: #b36d06;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+#inicio .contenido .presentacion a:hover{
+    background-color: #b36d06;
+    color: #b36d06;
+}
+
+#icon-nav{
+    color: #b36d06;
+    display: none;
+
+}
+
+#linkedin{
+    color: #b36d06;
+    display: none;
+}
+
+#inicio .contenido-header .lm-logo{
+    height: 50px;
+    width: 50px;
+    
+}
+
+/** seccion  sobre mi estilos */ 
+
+#sobremi{
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 15px;
+    color: #c05d00;
+    display: flex;
+}
+
+
+
+/* SECCION SERVICIOS calendario */
+
+#servicios{
+    padding: 100px 15px;
+    text-align: center;
+    /*background-color: #BDCDD6;*/
+    background: linear-gradient(#9e7d51, rgba(5,3,1,.7)), url("https://images.unsplash.com/photo-1527581849771-416a9d62308e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#servicios .titulo-seccion{
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #292726;
+    text-decoration: underline;
+    text-decoration-color: #252525;
+    text-decoration-thickness: 5px;
+}
+
+#servicios .fila{
+    display: flex;
+    justify-content:center;
+    max-width: 11500px;
+    margin: 30px auto;
+
+}
+
+
+#servicios .fila .servicio{
+    max-width: 550px;
+    /*background-color: #f7a066;*/
+    background: linear-gradient(#9e7d51, rgba(0,0,0,.1)), url("https://images.unsplash.com/photo-1527581849771-416a9d62308e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    padding: 30px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: .05s;
+}
+
+#servicios .fila .servicio:hover{
+    box-shadow: 5px 5px 10px #b95b04, -5px -5px 10px #b95b04;
+}
+
+#servicios .fila .servicio h4{
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+#servicios .fila .servicio .icono{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #b8580a;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+#servicios .fila .servicio hr{
+    width: 30%;
+    margin: auto;
+    color: #852c09;
+    margin-bottom: 25px;
+}
+
+#servicios .fila .servicio a{
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #eec79b;
+    text-decoration:dashed;
+    display: inline;
+}
+
+#servicios .fila .servicio p{
+    text-decoration: dashed;
+    color:#130b01;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+/* CODIGOS COMENTADOS EN HTML */
+/** seccion skill habilidades blandas*/
+
+.contenedor-skills{
+    background: linear-gradient(#e4ad6f, rgba(33,16,16,.8)), url("https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+
+/* SECCION FrontEnd carreras */
+#portafolio{
+    background: linear-gradient(#d46a12, rgba(9,8,1,.3)), url("https://pbs.twimg.com/media/GaMJlXMWoAA5Okm?format=jpg&name=4096x4096");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#portafolio .titulo-seccion{
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #111135;
+    text-decoration: underline;
+    text-decoration-color: #111135;
+    text-decoration-thickness: 5px;
+}
+
+#portafolio .fila{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+}
+
+#portafolio .fila .proyecto{
+    max-width: 450px;
+    border: 1px solid #000;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+#portafolio .fila .proyecto img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    object-fit: cover;
+    transition: .5s;
+}
+
+#portafolio .fila .proyecto:hover img{
+    filter: grayscale(0);
+}
+
+#portafolio .fila .proyecto .info{
+    position: absolute;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    color: #574fec;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    bottom: -40px;
+    transition: .5s;
+}
+
+#portafolio .fila .proyecto:hover .info{
+    opacity: 1;
+    bottom: 0;
+}
+
+/* termina carreras */
+
+.video-section {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-right: 1em;
+    padding: 1em;
+    border-radius: 8px;
+}
+.video-card {
+    background-color: hsl(34, 47%, 20%);
+    margin-right: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    flex: 0 0 auto;
+}
+.video-card iframe {
+    width: 100%;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .video-card iframe {
+        height: 150px;
+    }
+
+    #inicio-v{            
+        /*background-color: #BDCDD6;*/
+        background: url("https://pbs.twimg.com/media/GbkTE1QXUAIO0w4?format=jpg&name=large");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;        
+    }
+
+
+
+}
+@media (max-width: 480px) {
+    .video-card {
+        min-width: 200px;
+    }
+    .video-card iframe {
+        height: 250px;
+    }
+}
+
+/* seccio footer */
+
+footer{
+    background-color: #000;
+    color: #bb7204;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: #c96c02;
+    display: inline-block;
+    margin: 5px;
+    font-size: 26px;
+
+}
+
+/*INICIO*/
+
+@media (max-width: 768px) {
+    .smart-img{
+        height: 150px;
+        width: auto;
+    }
+}
+@media (max-width: 480px) {
+    .smart-img {
+        min-width: 100px;
+    }
+    
+}
+
+/* seccion responsive */
+
+@media screen and (max-width:600px){
+    .redes{
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    nav.responsive{
+        display: block;
+        background-color: #201805; 
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+        
+    }
+    nav.responsive ul{
+        display: block !important;
+        text-align: center;
+        
+    }
+    nav.responsive ul li{
+        margin: 5px 0;
+    }
+    #icon-nav{
+        display:flex;
+        
+    }
+    .blanco{
+        color: #0d01f8;
+    }
+    
+    .linkedin{
+        color: #0a00be;
+        display: block;
+    }
+    
+    
+    #sobremi .contenedor-foto{
+        max-width: 130px;
+        margin: 5px;
+    }
+    #sobremi .contenedor-foto img{
+        padding: 3px;
+
+    }
+    #sobremi .sobremi .titulo-seccion {
+        text-align: center;
+    }
+    #sobremi .sobremi h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    #sobremi .sobremi h3 {
+        margin-left: 25px;
+        text-align: center;
+    }
+    #sobremi .sobremi p {
+        margin-left: 25px;
+        text-align: center;
+    }
+    #sobremi .sobremi a{
+        margin-left: 30%;
+        text-align: center;
+    }
+
+    #servcios {
+        padding: 5px 15px;
+    }
+    #servicios .fila{
+        display: block;
+    }
+    #servicios .fila .servicio{
+        margin: 10px auto;
+    }
+
+    #servicios .banner-tag{
+        height: 450px;
+    }
+    .contenedor-skills{
+        padding: 50px 20px;
+    }
+    #portafolio{
+        padding: 50px 0;
+    }
+    #portafolio .fila{
+        display: block;
+    }
+    #portafolio .fila .proyecto{
+        margin: 10px auto;
+    }
+    #contacto{
+        padding: 50px 15px;
+    }
+    #contacto .contenedor-form .mitad{
+        margin-bottom: 15px;
+        display: block;
+    }
+    #contacto .contenedor-form .mitad input{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #footer .redes{
+        width: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
