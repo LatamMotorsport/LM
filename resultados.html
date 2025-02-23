@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resultados</title>
   <style>
-    /* Estilos generales */
+    /* Reset y estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       display: flex;
       justify-content: center;
@@ -15,107 +21,100 @@
       margin: 0;
     }
 
-    /* Contenedor externo: nuevo fondo del flyer con efecto 3D */
+    /* Contenedor externo (fondo principal) */
     .flyer-background {
       position: relative;
       width: 528px;
       height: 632px;
-      background-image: url('podio/fondopodio4.jpg'); /* Cambia la ruta del fondo */
+      background-image: url('podio/fondopodio.jpg'); /* Fondo del podio */
       background-size: cover;
       background-position: center;
-      border-radius: 20px; /* Bordes redondeados */
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
-      transform: perspective(1000px) translateY(-20px);
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* Contenedor interno: mantiene el fondo del podio y los pilotos */
+    /* Contenedor interno (podio y pilotos) */
     .flyer-container {
-      position: absolute;
-      width: 512px;
-      height: 512px;
-      background-image: url('podio/podio.png'); /* Fondo actual del podio */
-      background-size: cover;
+      position: relative;
+      width: 90%; /* Adaptable */
+      max-width: 500px;
+      height: auto;
+      aspect-ratio: 1; /* Mantiene proporción cuadrada */
+      background-image: url('podio/podio.png');
+      background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
       border-radius: 15px;
-      overflow: hidden;
-      top: 120px;
-      left: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .piloto {
       position: absolute;
-      width: 150px; /* Ajusta el tamaño de las imágenes según se requiera */
+      width: 30%;
+      max-width: 120px;
     }
 
     .nombre {
       position: absolute;
-      font-size: 20px;
+      font-size: 18px;
       color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra en el texto */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
 
-    /* Posicionamiento de cada elemento dentro del contenedor interno */
+    /* Posiciones dentro del podio */
     #primer {
+      top: 5%;
       left: 50%;
-      top: 10px;
       transform: translateX(-50%);
     }
-
     #nombre-primer {
+      top: 35%;
       left: 50%;
-      top: 180px;
       transform: translateX(-50%);
     }
-
     #segundo {
-      left: 5%;
-      top: 70px;
+      top: 20%;
+      left: 15%;
     }
-
     #nombre-segundo {
-      left: 5%;
-      top: 260px;
+      top: 50%;
+      left: 15%;
     }
-
     #tercero {
-      right: 5%;
-      top: 125px;
+      top: 25%;
+      right: 15%;
     }
-
     #nombre-tercero {
-      right: 5%;
-      top: 300px;
+      top: 55%;
+      right: 15%;
     }
 
-    /* RESPONSIVE DESIGN PARA SMARTPHONES */
+    /* 📱 Diseño adaptable a smartphones */
     @media (max-width: 600px) {
       .flyer-background {
-        width: 90%;
+        width: 95%;
         height: auto;
       }
-
+      
       .flyer-container {
-        width: 90%;
-        height: auto;
-        top: 15%;
-        left: 5%;
+        width: 95%;
+        max-width: 350px;
       }
 
       .piloto {
-        width: 100px;
+        width: 25%;
+        max-width: 100px;
       }
 
       .nombre {
-        font-size: 16px;
+        font-size: 14px;
       }
-
-      #primer { top: 5%; }
-      #nombre-primer { top: 25%; }
-      #segundo { top: 15%; left: 10%; }
-      #nombre-segundo { top: 35%; left: 10%; }
-      #tercero { top: 20%; right: 10%; }
-      #nombre-tercero { top: 40%; right: 10%; }
     }
   </style>
 </head>
@@ -127,7 +126,7 @@
       <div id="nombre-primer" class="nombre">AR7 Chupete</div>
       
       <!-- Imagen y nombre del segundo lugar -->
-      <img src="podio/Piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
+      <img src="podio/piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
       <div id="nombre-segundo" class="nombre">AR7 Chupete</div>
       
       <!-- Imagen y nombre del tercer lugar -->
