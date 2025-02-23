@@ -14,7 +14,15 @@
       background-color: #222;
       margin: 0;
     }
-
+    
+    /* Wrapper que encapsula el flyer y permite escalarlo en móviles */
+    .flyer-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    
     /* Contenedor externo: nuevo fondo del flyer con efecto 3D */
     .flyer-background {
       position: relative;
@@ -28,7 +36,7 @@
       box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
       transform: perspective(1000px) translateY(-20px);
     }
-
+    
     /* Contenedor interno: mantiene el fondo del podio y los pilotos */
     .flyer-container {
       position: absolute;
@@ -42,97 +50,78 @@
       top: 120px;
       left: 8px;
     }
-
+    
     .piloto {
       position: absolute;
       width: 150px; /* Ajusta el tamaño de las imágenes según se requiera */
     }
-
+    
     .nombre {
       position: absolute;
       font-size: 20px;
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra en el texto */
     }
-
+    
     /* Posicionamiento de cada elemento dentro del contenedor interno */
     #primer {
       left: 50%;
       top: 10px;
       transform: translateX(-50%);
     }
-
+    
     #nombre-primer {
       left: 50%;
       top: 180px;
       transform: translateX(-50%);
     }
-
+    
     #segundo {
       left: 5%;
       top: 70px;
     }
-
+    
     #nombre-segundo {
       left: 5%;
       top: 260px;
     }
-
+    
     #tercero {
       right: 5%;
       top: 125px;
     }
-
+    
     #nombre-tercero {
       right: 5%;
       top: 300px;
     }
-
-    /* RESPONSIVE DESIGN PARA SMARTPHONES */
+    
+    /* RESPONSIVE DESIGN PARA SMARTPHONES:
+       Se escala el flyer sin tocar las medidas internas */
     @media (max-width: 600px) {
-      .flyer-background {
-        width: 90%;
-        height: auto;
+      .flyer-wrapper {
+        transform: scale(0.75);
+        transform-origin: top center;
       }
-
-      .flyer-container {
-        width: 90%;
-        height: auto;
-        top: 15%;
-        left: 5%;
-      }
-
-      .piloto {
-        width: 100px;
-      }
-
-      .nombre {
-        font-size: 16px;
-      }
-
-      #primer { top: 5%; }
-      #nombre-primer { top: 25%; }
-      #segundo { top: 15%; left: 10%; }
-      #nombre-segundo { top: 35%; left: 10%; }
-      #tercero { top: 20%; right: 10%; }
-      #nombre-tercero { top: 40%; right: 10%; }
     }
   </style>
 </head>
 <body>
-  <div class="flyer-background">
-    <div class="flyer-container">
-      <!-- Imagen y nombre del primer lugar -->
-      <img src="podio/piloto1.png" alt="Primer Lugar" id="primer" class="piloto">
-      <div id="nombre-primer" class="nombre">AR7 Chupete</div>
-      
-      <!-- Imagen y nombre del segundo lugar -->
-      <img src="podio/Piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
-      <div id="nombre-segundo" class="nombre">AR7 Chupete</div>
-      
-      <!-- Imagen y nombre del tercer lugar -->
-      <img src="podio/piloto3.png" alt="Tercer Lugar" id="tercero" class="piloto">
-      <div id="nombre-tercero" class="nombre">AR7 Chupete</div>
+  <div class="flyer-wrapper">
+    <div class="flyer-background">
+      <div class="flyer-container">
+        <!-- Imagen y nombre del primer lugar -->
+        <img src="podio/piloto1.png" alt="Primer Lugar" id="primer" class="piloto">
+        <div id="nombre-primer" class="nombre">AR7 Chupete</div>
+        
+        <!-- Imagen y nombre del segundo lugar -->
+        <img src="podio/piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
+        <div id="nombre-segundo" class="nombre">AR7 Chupete</div>
+        
+        <!-- Imagen y nombre del tercer lugar -->
+        <img src="podio/piloto3.png" alt="Tercer Lugar" id="tercero" class="piloto">
+        <div id="nombre-tercero" class="nombre">AR7 Chupete</div>
+      </div>
     </div>
   </div>
 </body>
