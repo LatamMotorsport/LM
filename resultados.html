@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <style>
+    /* Estilos generales */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #222;
+      margin: 0;
+    }
+
+    /* Contenedor externo: nuevo fondo del flyer con efecto 3D */
+    .flyer-background {
+      position: relative;
+      width: 528px;
+      height: 632px;
+      background-image: url('podio/fondopodio4.jpg'); /* Cambia la ruta del fondo */
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px; /* Bordes redondeados */
+      overflow: hidden;
+      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
+      transform: perspective(1000px) translateY(-20px);
+    }
+
+    /* Contenedor interno: mantiene el fondo del podio y los pilotos */
+    .flyer-container {
+      position: absolute;
+      width: 512px;
+      height: 512px;
+      background-image: url('podio/podio.png'); /* Fondo actual del podio */
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      overflow: hidden;
+      top: 120px;
+      left: 8px;
+    }
+
+    .piloto {
+      position: absolute;
+      width: 150px; /* Ajusta el tamaño de las imágenes según se requiera */
+    }
+
+    .nombre {
+      position: absolute;
+      font-size: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra en el texto */
+    }
+
+    /* Posicionamiento de cada elemento dentro del contenedor interno */
+    #primer {
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%);
+    }
+
+    #nombre-primer {
+      left: 50%;
+      top: 180px;
+      transform: translateX(-50%);
+    }
+
+    #segundo {
+      left: 5%;
+      top: 70px;
+    }
+
+    #nombre-segundo {
+      left: 5%;
+      top: 260px;
+    }
+
+    #tercero {
+      right: 5%;
+      top: 125px;
+    }
+
+    #nombre-tercero {
+      right: 5%;
+      top: 300px;
+    }
+
+    /* RESPONSIVE DESIGN PARA SMARTPHONES */
+    @media (max-width: 600px) {
+      .flyer-background {
+        width: 90%;
+        height: auto;
+      }
+
+      .flyer-container {
+        width: 90%;
+        height: auto;
+        top: 15%;
+        left: 5%;
+      }
+
+      .piloto {
+        width: 100px;
+      }
+
+      .nombre {
+        font-size: 16px;
+      }
+
+      #primer { top: 5%; }
+      #nombre-primer { top: 25%; }
+      #segundo { top: 15%; left: 10%; }
+      #nombre-segundo { top: 35%; left: 10%; }
+      #tercero { top: 20%; right: 10%; }
+      #nombre-tercero { top: 40%; right: 10%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer-background">
+    <div class="flyer-container">
+      <!-- Imagen y nombre del primer lugar -->
+      <img src="podio/piloto1.png" alt="Primer Lugar" id="primer" class="piloto">
+      <div id="nombre-primer" class="nombre">AR7 Chupete</div>
+      
+      <!-- Imagen y nombre del segundo lugar -->
+      <img src="podio/piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
+      <div id="nombre-segundo" class="nombre">AR7 Chupete</div>
+      
+      <!-- Imagen y nombre del tercer lugar -->
+      <img src="podio/piloto3.png" alt="Tercer Lugar" id="tercero" class="piloto">
+      <div id="nombre-tercero" class="nombre">AR7 Chupete</div>
+    </div>
+  </div>
+</body>
+</html>
