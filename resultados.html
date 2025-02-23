@@ -15,15 +15,14 @@
       margin: 0;
     }
     
-    /* Wrapper que encapsula el flyer y permite escalarlo en móviles */
+    /* Contenedor que envuelve todo el flyer y permite escalarlo en móviles */
     .flyer-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+      /* Por defecto, sin escala */
+      width: 528px;
+      height: 632px;
     }
     
-    /* Contenedor externo: nuevo fondo del flyer con efecto 3D */
+    /* Contenedor externo: fondo del flyer con efecto 3D */
     .flyer-background {
       position: relative;
       width: 528px;
@@ -53,14 +52,14 @@
     
     .piloto {
       position: absolute;
-      width: 150px; /* Ajusta el tamaño de las imágenes según se requiera */
+      width: 150px; /* Tamaño de las imágenes */
     }
     
     .nombre {
       position: absolute;
       font-size: 20px;
       color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra en el texto */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
     
     /* Posicionamiento de cada elemento dentro del contenedor interno */
@@ -97,11 +96,15 @@
     }
     
     /* RESPONSIVE DESIGN PARA SMARTPHONES:
-       Se escala el flyer sin tocar las medidas internas */
+       Se escala todo el flyer sin alterar medidas o posiciones internas */
     @media (max-width: 600px) {
       .flyer-wrapper {
+        /* Escalamos el flyer manteniendo su proporción original.
+           Factor de escala = 0.75 (528px x 0.75 = 396px; 632px x 0.75 = 474px) */
+        width: calc(528px * 0.75);
+        height: calc(632px * 0.75);
         transform: scale(0.75);
-        transform-origin: top center;
+        transform-origin: top left;
       }
     }
   </style>
@@ -115,7 +118,7 @@
         <div id="nombre-primer" class="nombre">AR7 Chupete</div>
         
         <!-- Imagen y nombre del segundo lugar -->
-        <img src="podio/piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
+        <img src="podio/Piloto2.png" alt="Segundo Lugar" id="segundo" class="piloto">
         <div id="nombre-segundo" class="nombre">AR7 Chupete</div>
         
         <!-- Imagen y nombre del tercer lugar -->
