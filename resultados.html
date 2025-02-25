@@ -8,6 +8,7 @@
     /* Estilos generales */
     body {
       display: flex;
+      flex-direction: column; /* Para colocar el flyer y la tabla en columna */
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -107,6 +108,28 @@
         transform-origin: top left;
       }
     }
+    /* Estilos para el contenedor de la tabla publicada */
+    #tablaPublicada {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    #tablaPublicada table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #tablaPublicada th, #tablaPublicada td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+    #tablaPublicada th {
+      background-color: #333;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -127,5 +150,28 @@
       </div>
     </div>
   </div>
+  <!-- Contenedor para la tabla de Posiciones Generales publicada -->
+  <div id="tablaPublicada"></div>
+
+  <script>
+    // Al cargar la página, se obtiene la tabla publicada desde JSONbin.io
+    window.onload = function() {
+      fetch("https://api.jsonbin.io/v3/b/67bd18b0e41b4d34e49b4ebd/latest", {
+        method: "GET",
+        headers: {
+          "X-Master-Key": "$2a$10$h8ZlsPiJ1eXRyWwRglxmC.KtBcQdEBty32Q8swnwK67yTfrbMG99S"
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        if (json && json.record && json.record.tablaPosicionesGenerales) {
+          document.getElementById('tablaPublicada').innerHTML = json.record.tablaPosicionesGenerales;
+        }
+      })
+      .catch(err => {
+        console.error("Error al obtener la tabla publicada:", err);
+      });
+    }
+  </script>
 </body>
 </html>
