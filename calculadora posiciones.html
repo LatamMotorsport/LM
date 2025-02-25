@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Posiciones</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Encabezado para el aviso */
+    #mensaje {
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      margin: 10px 0;
+    }
+    /* Contenedor flexible para alinear tablas lado a lado */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    /* Ajuste de ancho para que quepan varias tablas */
+    table {
+      width: 300px;
+      margin: 20px 0;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+    /* Encabezados con alto contraste */
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 5px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    /* Contenedor para la sección de actualización de puntos y guardado */
+    #updatePointsContainer {
+      text-align: center;
+      margin: 20px;
+    }
+    /* Contenedor para publicación */
+    #downloadContainer {
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Aviso de guardado en el encabezado -->
+  <div id="mensaje"></div>
+
+  <!-- Sección para actualizar los puntos y guardar datos -->
+  <div id="updatePointsContainer">
+    <label for="pointsInput">Puntos (coma-separados para posiciones 1 a 24): </label>
+    <input type="text" id="pointsInput" size="80" placeholder="350,320,300,...">
+    <button onclick="updatePoints()" class="button">Actualizar Puntos</button>
+    <button onclick="guardarDatos()" class="button">Guardar</button>
+  </div>
+
+  <div class="container">
+    <!-- Carrera 1 -->
+    <div>
+      <h1>Carrera 1</h1>
+      <table id="carrera1">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            var puntosCarrera = [45,40,37,34,32,30,28,26,24,22,20,18,16,14,12,10,80,6,4,2,0,0,0,0];
+            for (let i = 0; i < 24; i++) {
+              document.write(`
+                <tr>
+                  <td>${i+1}</td>
+                  <td><input type="text" class="piloto" style="width: 200px;"></td>
+                  <td>${puntosCarrera[i]}</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <!-- Carrera 2 -->
+    <div>
+      <h1>Carrera 2</h1>
+      <table id="carrera2">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            for (let i = 0; i < 24; i++) {
+              document.write(`
+                <tr>
+                  <td>${i+1}</td>
+                  <td><input type="text" class="piloto" style="width: 200px;"></td>
+                  <td>${puntosCarrera[i]}</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <!-- Carrera 3 -->
+    <div>
+      <h1>Carrera 3</h1>
+      <table id="carrera3">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            for (let i = 0; i < 24; i++) {
+              document.write(`
+                <tr>
+                  <td>${i+1}</td>
+                  <td><input type="text" class="piloto" style="width: 200px;"></td>
+                  <td>${puntosCarrera[i]}</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <!-- Carrera 4 -->
+    <div>
+      <h1>Carrera 4</h1>
+      <table id="carrera4">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            for (let i = 0; i < 24; i++) {
+              document.write(`
+                <tr>
+                  <td>${i+1}</td>
+                  <td><input type="text" class="piloto" style="width: 200px;"></td>
+                  <td>${puntosCarrera[i]}</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <!-- Carrera 5 -->
+    <div>
+      <h1>Carrera 5</h1>
+      <table id="carrera5">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            for (let i = 0; i < 24; i++) {
+              document.write(`
+                <tr>
+                  <td>${i+1}</td>
+                  <td><input type="text" class="piloto" style="width: 200px;"></td>
+                  <td>${puntosCarrera[i]}</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    <!-- Posiciones Generales -->
+    <div>
+      <h1>Posiciones Generales</h1>
+      <table id="posicionesGenerales">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Piloto</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPosiciones">
+          <!-- Las filas se generarán automáticamente con JavaScript -->
+        </tbody>
+      </table>
+      <!-- Botón para publicar la tabla Posiciones Generales en resultados.html -->
+      <div id="downloadContainer">
+        <button onclick="publicarTabla()" class="button">Publicar Posiciones Generales</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Guarda los datos de las 5 carreras en localStorage
+    function guardarDatos() {
+      for (let i = 1; i <= 5; i++) {
+        const pilotos = Array.from(document.querySelectorAll('#carrera' + i + ' .piloto')).map(input => input.value);
+        localStorage.setItem('pilotosCarrera' + i, JSON.stringify(pilotos));
+      }
+      actualizarPosicionesGenerales();
+      document.getElementById('mensaje').innerText = 'Datos guardados.';
+    }
+
+    // Carga los datos de las 5 carreras desde localStorage
+    function cargarDatos() {
+      for (let i = 1; i <= 5; i++) {
+        const pilotos = JSON.parse(localStorage.getItem('pilotosCarrera' + i)) || [];
+        document.querySelectorAll('#carrera' + i + ' .piloto').forEach((input, index) => {
+          input.value = pilotos[index] || '';
+        });
+      }
+      actualizarPosicionesGenerales();
+    }
+
+    // Actualiza la tabla de Posiciones Generales sumando los puntos de cada piloto en las 5 carreras
+    function actualizarPosicionesGenerales() {
+      const puntosTotales = {};
+      for (let i = 1; i <= 5; i++) {
+        const pilotos = Array.from(document.querySelectorAll('#carrera' + i + ' .piloto')).map(input => input.value);
+        const puntos = Array.from(document.querySelectorAll('#carrera' + i + ' td:nth-child(3)')).map(td => parseInt(td.textContent));
+        pilotos.forEach((piloto, index) => {
+          if (piloto) {
+            puntosTotales[piloto] = (puntosTotales[piloto] || 0) + puntos[index];
+          }
+        });
+      }
+      const pilotosOrdenados = Object.keys(puntosTotales).sort((a, b) => puntosTotales[b] - puntosTotales[a]);
+      const tbody = document.getElementById('tablaPosiciones');
+      tbody.innerHTML = '';
+      pilotosOrdenados.forEach((piloto, index) => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${piloto}</td>
+            <td>${puntosTotales[piloto]}</td>
+          </tr>
+        `;
+      });
+    }
+
+    // Actualiza los valores de puntos en todas las tablas basándose en el array puntosCarrera
+    function updateTablesPoints() {
+      for (let i = 1; i <= 5; i++) {
+        const rows = document.querySelectorAll('#carrera' + i + ' tbody tr');
+        rows.forEach((row, index) => {
+          if (row.cells[2]) {
+            row.cells[2].textContent = puntosCarrera[index];
+          }
+        });
+      }
+    }
+
+    // Función para actualizar el array de puntos y refrescar las tablas
+    function updatePoints() {
+      const input = document.getElementById('pointsInput').value;
+      const newPoints = input.split(',').map(point => parseInt(point.trim()));
+      if (newPoints.length !== 24 || newPoints.some(isNaN)) {
+        alert('Por favor, ingresa 24 valores numéricos separados por comas.');
+        return;
+      }
+      puntosCarrera = newPoints;
+      updateTablesPoints();
+      actualizarPosicionesGenerales();
+      document.getElementById('mensaje').innerText = 'Puntos actualizados.';
+    }
+
+    // Función para publicar la tabla "Posiciones Generales" en resultados.html usando JSONbin.io
+    function publicarTabla() {
+      var table = document.getElementById('posicionesGenerales');
+
+      // Actualiza el atributo value de cada input para reflejar su valor actual en el HTML
+      var inputs = table.querySelectorAll("input");
+      inputs.forEach(function(input) {
+          input.setAttribute("value", input.value);
+      });
+
+      var html = table.outerHTML;
+      var data = { "tablaPosicionesGenerales": html };
+
+      fetch("https://api.jsonbin.io/v3/b/67bd18b0e41b4d34e49b4ebd", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key": "$2a$10$h8ZlsPiJ1eXRyWwRglxmC.KtBcQdEBty32Q8swnwK67yTfrbMG99S"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(json => {
+        console.log("Tabla publicada exitosamente", json);
+        window.open('resultados.html', '_blank');
+      })
+      .catch(err => {
+        console.error("Error al publicar la tabla:", err);
+        alert("Error al publicar la tabla. Revisa la consola para más detalles.");
+      });
+    }
+
+    window.onload = cargarDatos;
+  </script>
+</body>
+</html>
