@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="eS">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-  <!-- cdn font-awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- estilos principales -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- título -->
-  <title>Latam-MotorSport LM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latam-MotorSport</title>
   <!-- icono favicon -->
   <!--<link rel="icon" type="image/x-icon" href="icon/code-solid.svg">-->
   <link rel="icon" href="./icon/casco.ico">
-  <!-- Open Graph data -->
+  
+  <!-- Fuentes y Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- Open Graph data -->
 <meta property="og:title" content="Latam-MotorSport" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cyberenterados.github.io/latam-motorsport/" />
@@ -23,265 +21,397 @@
 <meta property="og:description" content="Latam-MotorSport"/>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-  
-  <!-- Estilos adicionales para la sección reemplazada responsiva -->
   <style>
-  /* Contenedor para la nueva sección de videos */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    min-height: 80vh;
-    border: 1px solid #000;
-    overflow: hidden;
-    background: url('Imagenes/background2.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 0 auto;
-
-    /* Efecto visual mejorado */
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Contenedores de video */
-  .thumbnail {
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
-    margin: 12px 0;
-    position: relative;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid #000;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Mismo efecto 3D */
-  }
-
-  .thumbnail video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .thumbnail .text {
-    position: absolute;
-    bottom: 20px;
-    left: 40%;
-    transform: translateX(-50%);
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  /* Contenedores horizontales (carreras de YouTube) */
-  .video-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra 3D */
-    background: rgba(255, 255, 255, 0.1); /* Suave transparencia */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .video-card:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-  }
-
-  /* Ajustes para dispositivos móviles */
-  @media (max-width: 600px) {
+    /* Reset y estilos globales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat';
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: url('img/fondo1.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    /* ===================== */
+    /*    BANNER (INICIO)    */
+    /* ===================== */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 300px; /* Altura inicial para móviles */
+      overflow: hidden;
+      transition: height 2s ease-in-out;
+    }
+    .video-container.fullscreen {
+      height: 100vh; /* Pantalla completa en escritorio */
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    /* ===================== */
+    /*       HEADER          */
+    /* ===================== */
+    #inicio .contenido header {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+    #inicio .contenido header .contenido-header {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      color: #b36d06;
+    }
+    /* Logo a la izquierda */
+#inicio .contenido header .lm-logo {
+  height: 25px; /* Ajusta la altura según lo necesites */
+  width: auto;  /* Esto asegura que el logo mantenga sus proporciones */
+  cursor: pointer;
+}
+    /* Menú centrado */
+    #inicio .contenido header nav {
+      flex: 1;
+      text-align: center;
+    }
+    #inicio .contenido header nav ul {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #inicio .contenido header nav ul li a {
+      text-decoration: none;
+      color: #b36d06;
+      margin: 0 12px;
+      font-weight: 400;
+      transition: 0.5s;
+    }
+    #inicio .contenido header nav ul li a:hover {
+      color: #b36d06;
+    }
+    /* Redes a la derecha */
+    #inicio .contenido header .redes a {
+      text-decoration: none;
+      color: #b36d06;
+      margin-left: 10px;
+      transition: 0.5s;
+      font-size: 20px;
+    }
+    #inicio .contenido header .redes a:hover {
+      color: #b36d06;
+    }
+    /* Ícono para menú responsive */
+    #icon-nav {
+      color: #b36d06;
+      display: none;
+      cursor: pointer;
+    }
+    
+    /* ===================== */
+    /*    SECCIÓN SERVICIOS  */
+    /* ===================== */
+    #servicios {
+      /* Mantenemos el efecto de fondo del Código 1 */
+      background: linear-gradient(#9e7d51, rgba(5,3,1,0.7)), url("https://images.unsplash.com/photo-1527581849771-416a9d62308e?q=80&w=2070&auto=format&fit=crop");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      padding: 100px 0;
+      text-align: center;
+    }
+    #servicios .titulo-seccion {
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #b36d06;
+      text-decoration: underline;
+      text-decoration-color: #b36d06;
+      text-decoration-thickness: 5px;
+      margin-bottom: 20px;
+    }
+    /* Contenedor para eventos */
     .container {
-      padding: 5px;
-      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid #000;
+      overflow: hidden;
+      background: url('Imagenes/.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 10px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     }
-
     .thumbnail {
-      height: 100px;
-      margin: 10px 0;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      margin: 12px 0;
+      position: relative;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid #000;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     }
-
+    .thumbnail video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .thumbnail .text {
-      font-size: 18px;
+      position: absolute;
+      bottom: 20px;
+      left: 40%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
     }
-
+    /* ===================== */
+    /*   SECCIÓN PORTAFOLIO  */
+    /* ===================== */
+    #portafolio {
+      background: linear-gradient(#d46a12, rgba(9,8,1,0.3)), url("https://pbs.twimg.com/media/GaMJlXMWoAA5Okm?format=jpg&name=4096x4096");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      padding: 100px 0;
+      text-align: center;
+    }
+    #portafolio .titulo-seccion {
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #111135;
+      text-decoration: underline;
+      text-decoration-color: #111135;
+      text-decoration-thickness: 5px;
+      margin-bottom: 20px;
+    }
+    /* Carrusel de videos */
+    .video-section {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      margin-right: 1em;
+      padding: 1em;
+      border-radius: 8px;
+    }
     .video-card {
-      padding: 5px;
+      background-color: hsl(34, 47%, 20%);
+      margin-right: 1em;
+      padding: 1em;
+      border-radius: 8px;
+      min-width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      flex: 0 0 auto;
     }
-  }
-</style>
-
+    .video-card iframe {
+      width: 100%;
+      height: 300px;
+    }
+    @media (max-width: 768px) {
+      .video-card iframe { height: 150px; }
+      .video-container { height: 100vh; } /* En móviles se puede ajustar la altura */
+    }
+    @media (max-width: 480px) {
+      .video-card { min-width: 200px; }
+      .video-card iframe { height: 250px; }
+    }
+    /* ===================== */
+    /*         FOOTER        */
+    /* ===================== */
+    footer.footer {
+      background-color: #000;
+      color: #bb7204;
+      text-align: center;
+      padding: 30px 0;
+    }
+    footer.footer a {
+      text-decoration: none;
+      color: #c96c02;
+      display: inline-block;
+      margin: 5px;
+      font-size: 26px;
+    }
+    /* ===================== */
+    /*      RESPONSIVE       */
+    /* ===================== */
+    @media screen and (max-width:600px) {
+      .redes { display: none; }
+      nav { display: none; }
+      nav.responsive {
+        display: block;
+        background-color: #201805;
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+      }
+      nav.responsive ul {
+        display: block !important;
+        text-align: center;
+      }
+      nav.responsive ul li { margin: 5px 0; }
+      #icon-nav { display: flex; }
+    }
+  </style>
 </head>
 <body>
-  <!-- SECCIÓN INICIO -->
+  <!-- Elemento de audio (ruta y nombre de archivo a modificar según corresponda) -->
+  <audio id="audioSound" src="audio/encendido.mp3"></audio>
+  
+  <!-- ===================== -->
+  <!--      SECCIÓN INICIO   -->
+  <!-- ===================== -->
   <div id="inicio-v">
-    <div class="video-fondo">
-      <video class="video-grande" autoplay muted loop>
+    <!-- Usamos video-container para el efecto del banner -->
+    <div class="video-container fullscreen">
+      <video autoplay muted loop>
         <source src="vid/banner-1.mp4" type="video/mp4">
         Tu navegador no soporta el video.
       </video>
-      <img src="#" alt="LMLOGO" class="smart-img"> 
+      <!-- Puedes agregar un overlay o imagen de logo si lo deseas -->
     </div>
     <section id="inicio">
       <div class="contenido">
         <header>
           <div class="contenido-header">
-            <!--<h1>LM</h1>-->
-            <img src="./img/logo-sin-fondo.png" alt="LM LOGO" class="lm-logo">
-            <nav id="nav" class="">
+            <!-- Se agregó onclick para reproducir el audio -->
+            <img src="img/lm-logo.png" alt="LM Logo" class="lm-logo" onclick="playAudio()">
+            <nav id="nav">
               <ul id="links">
                 <li><a href="#inicio" class="seleccionando" onclick="seleccionar(this)">Inicio</a></li>
-                <!--<li><a href="#sobremi">Biografía</a></li>-->
                 <li><a href="#servicios">Próximas carreras</a></li>
-                <li><a href="#portafolio">Carreras YouTube</a></li>
-				<li><a href="resultados.html"></li>
-				<li><a href="https://www.appsheet.com/start/5a156580-0a65-4f5a-96a9-d70a978aa359?platform=desktop#viewStack[0][identifier][Type]=Control&viewStack[0][identifier][Name]=Rating%20e-MSS&appName=BRASILe-MSS-986216252-24-07-10&tableNameToFilterOn=RatingApp">Rating e-MSS</li>
-              </ul>
+                <li><a href="#portafolio">Carreras Youtube</a></li>
+                <li><a href="https://www.appsheet.com/start/5a156580-0a65-4f5a-96a9-d70a978aa359?platform=desktop#viewStack[0][identifier][Type]=Control&viewStack[0][identifier][Name]=Rating%20e-MSS&appName=BRASILe-MSS-986216252-24-07-10&tableNameToFilterOn=RatingApp">Rating e-MSS</a></li>
+                <li><a href="https://racenet.com/">Racenet</a></li>
+	      </ul>    
             </nav>
-            <!-- Iconos del menú responsive -->
-            <div id="icon-nav" onclick="responsiveMenu()" class="blanco">
-              <a><i class="fa-solid fa-bars"></i></a>
-            </div>
             <div class="redes">
               <a href="https://www.youtube.com/@latammotorsport/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
               <a href="https://chat.whatsapp.com/CvhK0cHOKXoIEnT9ZNmwK4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
               <a href="https://discord.gg/ChJMa2Ex" target="_blank"><i class="fa-brands fa-discord"></i></a>
               <a href="https://www.instagram.com/latam.motorsport/profilecard/?igsh=NzQ0Z3R6bzJsdXBr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
               <a href="https://www.twitch.tv/latamfm" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-              <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>    
+              <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             </div>
-          </div>                
+            <div id="icon-nav" onclick="responsiveMenu()">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
         </header>
-        <div class="presentacion"></div>
-      </div>
-    </section>
-  </div>
+      
   
-  <!-- SECCIÓN SERVICIOS (Reemplazada, responsiva y con fallback usando poster) -->
+  <!-- ===================== -->
+  <!--   SECCIÓN SERVICIOS   -->
+  <!-- ===================== -->
   <section id="servicios">
-    <h3 class="titulo-seccion">Próximas Carreras</h3>
-	  <h3 class="text">(Selecciona el evento para más info y registrarse) </h3>
     <div class="container">
+      <h3 class="titulo-seccion">Próximos Eventos</h3>
+      <h3 class="text">(Selecciona tu juego para más info y registrarse)</h3>
       <!-- Video 1 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/I51SoMeeqyF2BXDKbKnW7d'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/radical.mp4" type="video/mp4">
+      <div class="thumbnail" onclick="window.location.href='fm.html'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="vid/fm.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de videos.
         </video>
-        <div class="text"></div>
+        <div class=""></div>
       </div>
-  
       <!-- Video 2 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/HT5kqVtTDX6LjfI0Biwuap'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/fma.mp4" type="video/mp4">
+      <div class="thumbnail" onclick="window.location.href='wrc.html'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="vid/wrc.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de videos.
         </video>
         <div class="text"></div>
       </div>
-	    
-      <!-- Video 3 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/G3iutI9pzZEJjeFbRIC4c6'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/drarg.mp4" type="video/mp4">
+	  <!-- Video 3 -->
+      <div class="thumbnail" onclick="window.location.href='f1.html'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="vid/f1.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de videos.
         </video>
         <div class="text"></div>
       </div>
-
-      <!-- Video 4 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/DNHTxAHPmDH1S7ujVmyzoS'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/forzahorizon.mp4" type="video/mp4">
+	  <!-- Video 4 -->
+      <div class="thumbnail" onclick="window.location.href='fh5.html'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="vid/fh5.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de videos.
         </video>
         <div class="text"></div>
       </div>
-
-      <!-- Video 5 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/IWItFGEcUpA8YqbazYBury'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/krlregular.mp4" type="video/mp4">
+	  <!-- Video 5 -->
+      <div class="thumbnail" onclick="window.location.href='acc.html'">
+        <video autoplay muted loop poster="img/logo-sin-fondo.png">
+          <source src="vid/acc.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de videos.
         </video>
         <div class="text"></div>
       </div>
-
-      <!-- Video 6 -->
-      <div class="thumbnail" onclick="window.location.href='https://chat.whatsapp.com/IWItFGEcUpA8YqbazYBury'">
-        <video autoplay muted loop poster="Imagenes/logolm.png">
-          <source src="Videos/krlendurance.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de videos.
-        </video>
-        <div class="text"></div>
-      </div>	    
     </div>
-
   </section>
   
-  <!-- SECCIÓN PORTAFOLIO -->
-  <section id="portafolio">        
-    <h2 class="videos">Carreras Youtube</h2>
-    <div class="scroll-buttons">
-      <!--<button onclick="scrollLeft()">&#10094; Anterior</button>-->
-      <!--<button onclick="scrollRight()">Siguiente &#10095;</button>-->
-    </div>
+  <!-- ===================== -->
+  <!--   SECCIÓN PORTAFOLIO  -->
+  <!-- ===================== -->
+  <section id="portafolio">
+    <h2 class="titulo-seccion">Carreras Youtube</h2>
     <div class="video-section" id="videoSection">
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/RFnPDx31hvE" title="Copa VW - Fecha 3 - Suzuka Este" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/g4EqI8duSoQ" title="Copa VW - Fecha 2 - Sebring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/g4EqI8duSoQ" title="Copa VW - Fecha 2 - Sebring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/9KpFOgbl-gY" title="Copa VW - Fecha 1 - Catalunya" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9KpFOgbl-gY" title="Copa VW - Fecha 1 - Catalunya" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3u21L41V4aU?si=K82cDSwf5u9OA582" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/3u21L41V4aU?si=K82cDSwf5u9OA582" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/TL9BIXLyaUU?si=JEIRQnHxj0q1Lvrj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TL9BIXLyaUU?si=JEIRQnHxj0q1Lvrj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/x6zM8C_fnec?si=dNR-WuYFjuQQwZIy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/x6zM8C_fnec?si=dNR-WuYFjuQQwZIy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/t4IhQgeuWqw?si=kOsnkkVoN2ppM5Dx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/t4IhQgeuWqw?si=kOsnkkVoN2ppM5Dx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/xc8FjFkj2ro?si=0ne2o2JATIqN_u7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/xc8FjFkj2ro?si=0ne2o2JATIqN_u7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/HkvzlPqWSxg?si=XUAQ-78vsWVKhNnv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HkvzlPqWSxg?si=XUAQ-78vsWVKhNnv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <div class="video-card">
-        <h3></h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MFbC9idiiJU?si=uTIMOswgQXa5asdG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MFbC9idiiJU?si=uTIMOswgQXa5asdG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
-    <br>
-    <hr>
   </section>
   
-  <!-- SECCIÓN FOOTER -->
+  <!-- ===================== -->
+  <!--       FOOTER          -->
+  <!-- ===================== -->
   <footer class="footer">
     <p>Todos los derechos reservados - 2024</p>
     <p>LM Latam</p>
@@ -290,9 +420,32 @@
     <a href="https://discord.gg/ChJMa2Ex" target="_blank"><i class="fa-brands fa-discord"></i></a>
     <a href="https://www.instagram.com/latam.motorsport/profilecard/?igsh=NzQ0Z3R6bzJsdXBr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://www.twitch.tv/latamfm" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-    <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>    
+    <a href="https://www.tiktok.com/@latam.motorsport?_t=8qltHzFyv3t&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
   </footer>
-  <!-- js -->
-  <script src="js/main.js"></script>
+  
+  <!-- Funciones JavaScript básicas -->
+  <script>
+    function responsiveMenu() {
+      var nav = document.getElementById("nav");
+      if (nav.className === "") {
+        nav.className = "responsive";
+      } else {
+        nav.className = "";
+      }
+    }
+    function seleccionar(link) {
+      var links = document.querySelectorAll('#links a');
+      links.forEach(function(el) {
+        el.classList.remove('seleccionando');
+      });
+      link.classList.add('seleccionando');
+    }
+    // Función para reproducir el audio al hacer clic en el logo
+    function playAudio() {
+      var audio = document.getElementById("audioSound");
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
 </body>
 </html>
